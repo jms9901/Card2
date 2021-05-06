@@ -1,9 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 <style>
 a{
@@ -78,7 +78,7 @@ letter-spacing:1px;}
 			<div class="col-lg-6 col-md-8 info-box">
 		
 			<div class="col-lg-12 info-title">
-				³»Á¤º¸ 
+				ë‚´ì •ë³´ 
 			</div>
 			<div class="col-lg-12 info-form">
 				<form>
@@ -87,19 +87,19 @@ letter-spacing:1px;}
 				</div>
 				
 				<div class="form-group">
-					¾ÆÀÌµğ : 
+					ì•„ì´ë”” : 
 				</div>
 				
 				<div class="form-group">
-					ºñ¹Ğ¹øÈ£ : 
+					ë¹„ë°€ë²ˆí˜¸ : 
 				</div>
 				
 				<div class="form-group">
-					¿¬¶ôÃ³ : 
+					ì—°ë½ì²˜ : 
 				</div>
 				
 				<div class="form-group">
-					ÁÖ¹Îµî·Ï¹øÈ£ : 
+					ì£¼ë¯¼ë“±ë¡ë²ˆí˜¸ : 
 				</div>
 				
 				
@@ -117,8 +117,8 @@ letter-spacing:1px;}
 						 
 						 <div class="col-lg-6">
 						 	
-						 	<a href=""> Á¤º¸ ¼öÁ¤ </a>
-						 	<a href=""> È¸¿ø Å»Åğ </a>
+						 	<a href=""> ì •ë³´ ìˆ˜ì • </a>
+						 	<a href=""> íšŒì› íƒˆí‡´ </a>
 						 
 						 </div>
 				</div>
