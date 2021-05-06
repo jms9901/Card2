@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 
 import DTO.MemberDto;
+import DTO.ProductDto;
 
 public class MemberDao {
 	
@@ -119,5 +120,42 @@ public class MemberDao {
 			}
 			return null;
 		}
+			
+			public ArrayList<MemberDto> Memberlist(){
+				
+				ArrayList<MemberDto> list = new ArrayList<MemberDto>();
+				
+				try {
+					String SQL = "select * from product";
+					
+					PreparedStatement pstmt = conn.prepareStatement(SQL);
+					
+					rs = pstmt.executeQuery();
+					
+					while( rs.next()) {
+						MemberDto dto = new MemberDto(
+								rs.getString(2),
+								rs.getString(3),
+								rs.getString(4),
+								rs.getInt(5),
+								rs.getString(6),
+								rs.getString(7),
+								rs.getString(8),
+								rs.getString(9),
+								rs.getString(10),
+								rs.getString(11)
+								);
+						
+					dto.setMember_point(rs.getInt(1));
+					list.add(dto);
+						
+					}
+					
+					return list;
+				}catch (Exception e) {
+					// TODO: handle exception
+				} return list;
+				
+			}
 		
 }

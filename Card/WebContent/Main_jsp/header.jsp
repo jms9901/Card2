@@ -57,7 +57,8 @@
 		
 		<div id="login" style="margin-left: 68px;">
 			<button><a href="/Card/Member/login.jsp">로그인</a></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			<button><a href="/Card/Member/signup.jsp">회원가입</a></button>
+			<button><a href="/Card/Member/signup.jsp">회원가입</a></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<button><a href="/Card/Member/info.jsp">회원정보</a></button>
 		</div>
 </div>
 

@@ -1,3 +1,6 @@
+<%@page import="DAO.MemberDao"%>
+<%@page import="DTO.MemberDto"%>
+<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -46,6 +49,7 @@ margin-bottom: 10px;
 
 .form-group{
 margin-bottom: 10px;
+color:white;
 }
 
 .form-control:focus{
@@ -59,6 +63,7 @@ input{
 	width: 250px;	
 }
 
+
 .form-control-label{ 
 font-size:10px;
 color: white;
@@ -71,7 +76,11 @@ letter-spacing:1px;}
 </style>
 </head>
 <body>
-	
+	<% MemberDao dao = MemberDao.getinstance();
+		
+	ArrayList<MemberDto> list = new ArrayList<>();
+	list = dao.Memberlist();
+	%>
 	<div class="container">
 		
 		<div class="row">
@@ -80,33 +89,45 @@ letter-spacing:1px;}
 			<div class="col-lg-12 info-title">
 				내정보 
 			</div>
-			<div class="col-lg-12 info-form">
+			
+			 <div class="col-lg-12 info-form"> 
 				<form>
-				<div class="form-group">
-					<img alt="" src="/Card/images/snoopy.png" width="100px" height="100px">
-				</div>
-				
-				<div class="form-group">
-					아이디 : 
-				</div>
-				
-				<div class="form-group">
-					비밀번호 : 
-				</div>
-				
-				<div class="form-group">
-					연락처 : 
-				</div>
-				
-				<div class="form-group">
-					주민등록번호 : 
-				</div>
-				
-				
 				<div class="form-group">
 					-------------------------------------------------------------------
 				</div>
 				
+				<ul>
+				
+				<% for (int i=0; i<list.size(); i++) {
+					MemberDto dto = list.get(i); %>
+				
+				<li class="member_li">
+				
+					<a href=""><img alt="" src="/Card/images/snoopy.png" width="100px" height="100px"></a>
+				
+					<div class="member_info">		
+					
+					<span class="id"> [&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;아이디&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]&nbsp;&nbsp;: <%=dto.getMember_id()%></span>
+			
+				
+				
+					<span class="password">[&nbsp;&nbsp;&nbsp;&nbsp;비밀번호&nbsp;&nbsp;&nbsp;&nbsp;]&nbsp;&nbsp;:<%=dto.getMember_password()%> </span>
+			
+				
+					<span class="phone">[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;연락처&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]&nbsp;&nbsp;:<%=dto.getMember_phone() %></span> 
+				
+				
+					<span class="resdent">[&nbsp;주민등록번호&nbsp;]&nbsp;&nbsp;:<%=dto.getMember_resdentnum() %></span>  
+			
+				</div>	
+				</li>
+					<% } %>
+					
+				</ul>
+				
+				<div class="form-group">
+					-------------------------------------------------------------------
+				</div>
 				
 				<div class="form-group">
 						 
@@ -117,8 +138,8 @@ letter-spacing:1px;}
 						 
 						 <div class="col-lg-6">
 						 	
-						 	<a href=""> 정보 수정 </a>
-						 	<a href=""> 회원 탈퇴 </a>
+						 	<a href="info.jsp"> 정보 수정 | </a>
+						 	<a href="info.jsp"> 회원 탈퇴 </a>
 						 
 						 </div>
 				</div>
