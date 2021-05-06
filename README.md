@@ -29,5 +29,4 @@
 
 
 4. 참고 사이트
-
-무료 로고 제작 : https://hatchful.shopify.com/
+    1. 무료 로고 제작 : https://hatchful.shopify.com/
