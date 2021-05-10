@@ -1,0 +1,47 @@
+@charset "UTF-8";
+
+#table {
+	padding-top: 40px;
+	width: 100%;
+	margin: 0 auto;
+}
+
+#table h3 {
+	text-align: center;
+	margin-bottom: 50px;
+}
+
+#table form #table_1 {
+	margin: 0 auto;
+	border: solid 1px black;
+	border-collapse: collapse;
+}
+
+#table form #table_1 th {
+	padding: 20px;
+	background-color: #F5F2F2;
+
+}
+#table form #table_1 td {
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+#table form #table_2 {
+	margin: 0 auto;
+	margin-top: 20px;
+}
+
+input[type=button] {
+	padding: 3px 7px;
+	margin-right: 25px;
+	background-color: white;
+	border: none;
+	font-size: 15px;
+}
+input[type=submit] {
+	padding: 3px 7px;
+	background-color: white;
+	border: none;
+	font-size: 15px;
+}

@@ -17,7 +17,7 @@
 	<ul>
 		<li><a href="company.jsp">카드사등록</a></li>
 		<li><a href="cardadd.jsp">카드등록</a></li>
-		<li><a href="#">카드삭제</a></li>
+		<li><a href="carddelete.jsp">카드삭제</a></li>
 	</ul>
 
 </div>

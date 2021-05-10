@@ -135,5 +135,27 @@ public class CardDao {
 		}
 		return list;
 	}
+	
+	public int carddelete(String card_name, String card_company) {
+		
+		String sql = "delete from card where card_name=? and card_company=";
+		
+		try {
+			
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, card_name);
+			pstmt.setString(2, card_company);
+			
+			pstmt.executeUpdate();
+			
+			return 1;
+			
+		}catch (Exception e) {
+			e.getMessage();
+			e.getStackTrace();
+		}
+		return -1;
+	}
 
 }
