@@ -21,11 +21,7 @@ public class CardDao {
 
 			Class.forName("com.mysql.cj.jdbc.Driver"); // mysql �뱶�씪�씠踰� �뿰寃�
 
-			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/card?serverTime=UTC", "root", "7624");
-			
-			System.out.println("�뿰�룞�꽦怨�");
-			
-			
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3307/card?serverTime=UTC", "root", "1234");
 
 		} catch (Exception e) {
 			e.getMessage();
@@ -96,6 +92,41 @@ public class CardDao {
 				
 			}
 			
+			return list;
+			
+		}catch (Exception e) {
+			e.getMessage();
+			e.getStackTrace();
+		}
+		return list;
+	}
+	
+	public ArrayList<CardDto> cardcompanylist(String company) {
+		
+		ArrayList<CardDto> list = new ArrayList<CardDto>();
+		
+		String sql = "select * from card where card_company=?";
+		
+		try {
+			
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, company);
+			
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
+				
+				CardDto dto = new CardDto(
+						rs.getString(2),
+						rs.getString(3),
+						rs.getInt(5),
+						rs.getString(6),
+						rs.getString(7)
+						);
+				
+				list.add(dto);
+			}
 			return list;
 			
 		}catch (Exception e) {

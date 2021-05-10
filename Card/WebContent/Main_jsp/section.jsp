@@ -98,9 +98,9 @@
 					<a href="#"><img alt="" src="/Card/card_upload/<%=dto.getImages() %>" width="200"></a>
 					
 					<div id="list_info">
-						<span class="company"><a href="<%=dto.getBank_link() %>"><%=dto.getCard_company() %></a></span>
-						<span class="name"><a href="<%=dto.getBank_link() %>"><%=dto.getCard_name() %></a></span>
-						<span class="fee"><a href="<%=dto.getBank_link() %>"><%=dto.getMembership_fee() %></a></span>
+						<p class="company"><a href="<%=dto.getBank_link() %>"><%=dto.getCard_company() %></a></p>
+						<p class="name"><a href="<%=dto.getBank_link() %>"><%=dto.getCard_name() %></a></p>
+						<p class="fee"><a href="<%=dto.getBank_link() %>"><%=dto.getMembership_fee() %></a></p>
 					</div>
 				
 				</li>
