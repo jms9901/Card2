@@ -26,7 +26,7 @@
         1. 회원 정보 .HTML  [완]
         2. 회원 수정 .HTML 
         3. 회원 탈퇴 .HTML
-
-
+    7. 에러 페이지.HTML
+ 
 4. 참고 사이트
     1. 무료 로고 제작 : https://hatchful.shopify.com/
