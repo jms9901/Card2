@@ -33,10 +33,10 @@
 	
 		<div id="footer_ul">
 			<ul>
-				<li><a href="#"><img alt="" src="../images/youtube.png" width="40px" height="37px"></a></li>
-				<li><a href="#"><img alt="" src="../images/naver.png" width="35px" height="35px"></a></li>
-				<li><a href="#"><img alt="" src="../images/insta.jpeg" width="30px" height="35px"></a></li>
-				<li><a href="#"><img alt="" src="../images/kakao.png" width="30px" height="35px"></a></li>
+				<li><a href="https://www.youtube.com"><img alt="" src="../images/youtube.png" width="40px" height="37px"></a></li>
+				<li><a href="https://www.naver.com"><img alt="" src="../images/naver.png" width="35px" height="35px"></a></li>
+				<li><a href="https://www.instagram.com"><img alt="" src="../images/insta.jpeg" width="30px" height="35px"></a></li>
+				<li><a href="https://www.kakaocorp.com"><img alt="" src="../images/kakao.png" width="30px" height="35px"></a></li>
 			</ul>
 		</div>
 	
