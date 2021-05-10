@@ -114,7 +114,7 @@
 					-------------------------------------------------------------------
 				</div>
 				
-						<img alt="" src="/Card/images/snoopy.png" width="120px" height="120px">
+						<img alt="" src="/Card/images/snoopy1.png" width="120px" height="120px">
 			
 						<div class="col-lg-5 delete-form" >
 								<form method="post" action="deletecontroller.jsp">

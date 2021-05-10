@@ -64,11 +64,13 @@
 	 
 	 MemberDao dao = MemberDao.getinstance();
 	 
-	 int result = dao.update(dto);
+	 String id = (String)session.getAttribute("user");
+	 int result = dao.update(dto, id);
 	 
 	 if( result == 1 ){  
 			
 			PrintWriter script =response.getWriter();
+			
 			script.println("<script>");
 			script.println("alert('회원정보 수정 되었습니다 .');");
 			script.println("location.href ='/Card/Member/info.jsp'");

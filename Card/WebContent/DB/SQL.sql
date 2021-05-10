@@ -29,10 +29,10 @@ create table Bulletin_board(
 create table card.member(
 
 	member_point int not null,
-	member_id varchar(50) not null , 
+	member_id varchar(50) not null primary key, 
 	member_password varchar(40) not null,
 	member_name varchar(3000) not null,
-	member_resdentnum int primary key AUTO_INCREMENT,
+	member_resdentnum int primary key ,
 	member_sex varchar(40) not null,
 	member_birth varchar(100) not null,
 	member_phone varchar(100) not null

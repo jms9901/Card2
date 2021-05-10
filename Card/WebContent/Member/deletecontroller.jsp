@@ -2,11 +2,11 @@
 <%@page import="java.io.PrintWriter"%>
 <%@page import="DAO.MemberDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding=""%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
+
 <title>Insert title here</title>
 </head>
 <body>
@@ -20,14 +20,14 @@
 		String password = request.getParameter("password");
 		
 		MemberDao dao = MemberDao.getinstance();
-		int result = dao.delete(dto);		
+		
+		String id = (String)session.getAttribute("user");
+		int result = dao.delete(password , id);		
 		
 		if( result == 1 ){  
 			
 			
 			session.invalidate();
-			
-			
 			
 			PrintWriter script =response.getWriter();
 			script.println("<script>");

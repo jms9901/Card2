@@ -54,21 +54,7 @@ public class MemberDao {
 		return -1;
 	}
 	
-	public int delete( MemberDto dto) {
-		String SQL = "insert into member(member_password)"+"values(?)";
-		try {
-			PreparedStatement pstmt = conn.prepareStatement(SQL);
-			
-			pstmt.setString (1, dto.getMember_password());
-			
-			pstmt.executeUpdate();
-			
-			return 1;
-		} catch (Exception e) {
-			// TODO: handle exception
-		}
-		return -1;
-	}
+	
 	
 	//로그인 메소드 
 		public int login( String id, String password ) {
@@ -136,6 +122,8 @@ public class MemberDao {
 			return null;
 		}
 			
+			
+			
 			public MemberDto getMember( String id ){
 				
 				
@@ -169,9 +157,27 @@ public class MemberDao {
 				
 			}
 			
+			
+			public int delete( String password, String id) {
+				String SQL = "delete from member where member_password= ? and member_id =?";
+				try {
+					PreparedStatement pstmt = conn.prepareStatement(SQL);
+					
+					pstmt.setString (1, password);
+					pstmt.setString (2, id);
+					pstmt.executeUpdate();
+					
+					return 1;
+				} catch (Exception e) {
+					// TODO: handle exception
+				}
+				return -1;
+			}
+			
+			
 			//정보수정 
-			public int update( MemberDto dto) {
-				String SQL = "insert into member(member_password,member_name,member_phone,member_cardcompany,member_cardbenefit,member_cardtype)"+"values(?,?,?,?,?,?)";
+			public int update( MemberDto dto, String id) {
+				String SQL = "update member set member_password=? , member_name = ? ,member_phone=? , member_cardcompany=?,member_cardbenefit=?,member_cardtype=? where member_id =?";
 				try {
 					PreparedStatement pstmt = conn.prepareStatement(SQL);
 					pstmt.setString (1, dto.getMember_password());
@@ -180,7 +186,7 @@ public class MemberDao {
 					pstmt.setString(4, dto.getMember_cardcompany());
 					pstmt.setString(5, dto.getMember_cardbenefit());
 					pstmt.setString(6, dto.getMember_cardtype());
-					
+					pstmt.setString(7, id);
 					pstmt.executeUpdate();
 					
 					return 1;

@@ -146,8 +146,8 @@ text-align: left;}
 						 
 						 <div class="col-lg-6">
 						 	
-						 	<a href="info.jsp"> 정보 수정 | </a>
-						 	<a href="info.jsp"> 회원 탈퇴 </a>
+						 	<a href="/Card/Member/update.jsp"> 정보 수정 | </a>
+						 	<a href="/Card/Member/delete.jsp"> 회원 탈퇴 </a>
 						 
 						 </div>
 				</div>
