@@ -46,11 +46,6 @@
 	display: inline-block;
 }
 
-#nav .dropdown2 {
-	position: relative;
-	display: inline-block;
-}
-
 #nav #nav_item1, #nav_item2, #nav_item3, #login {
 	position: relative;
 	display: inline-block;
