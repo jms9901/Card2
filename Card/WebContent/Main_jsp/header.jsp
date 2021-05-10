@@ -14,6 +14,10 @@
 
 </head>
 <body>
+<% 
+	
+	String user = (String)session.getAttribute("user");  %>
+	
 	<div id="nav">
 		<div id="nav_logo">
 			<a href="/Card/Main_jsp/section.jsp"><img alt="" src="/Card/images/card.png" width="65px" style="vertical-align:middle; margin-right:50px;"></a>
@@ -56,9 +60,16 @@
 		</div>
 		
 		<div id="login" style="margin-left: 68px;">
-			<button><a href="/Card/Member/login.jsp">로그인</a></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			<button><a href="/Card/Member/signup.jsp">회원가입</a></button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-			<button><a href="/Card/Member/info.jsp">회원정보</a></button>
+		
+		<%if (user == null) { %>
+					<a href="/Card/Member/login.jsp">로그인</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<a href="/Card/Member/signup.jsp">회원가입</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<%} else { %>
+						<li style="padding-top: 10px;"> <%= user %>님 </li>
+						<a href="/Card/Member/logout.jsp"> 로그아웃 </a>
+						<a href="/Card/Member/info.jsp">회원정보</a> 
+						<%}%>
+
 		</div>
 </div>
 

@@ -99,7 +99,7 @@ input{
 				</div>
 				
 					<div class="col-lg-12 findpw-title">
-					 비밀번호 찾기
+					 임시 비밀번호 발급
 					</div>
 					<div class="col-lg-12 findpw-form">
 							<form method="post" action="findpwcontroller.jsp">
@@ -143,7 +143,7 @@ input{
 									</div>
 									
 									<div class="col-lg-6 findpw-btm findpw-botton">
-										 <button type="submit" > 비밀번호 찾기 </button>
+										 <button type="submit" > 임시비번 발급 </button>
 									</div>
 									</div>	
 						

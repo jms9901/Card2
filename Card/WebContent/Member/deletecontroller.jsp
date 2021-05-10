@@ -1,7 +1,8 @@
-<%@page import="DAO.MemberDao"%>
+<%@page import="DTO.MemberDto"%>
 <%@page import="java.io.PrintWriter"%>
+<%@page import="DAO.MemberDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding=""%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,34 +16,35 @@
 		// 첨부파일 사용시 enctype : 타입으로 변경 
 		// 2. 파일명은 DB저장
 		
-		String id = request.getParameter("id");
-		String name = request.getParameter("name");
-		String phone = request.getParameter("phone");
+		
+		String password = request.getParameter("password");
 		
 		MemberDao dao = MemberDao.getinstance();
-		String result = dao.findpw(id, name, phone);
+		int result = dao.delete(dto);		
 		
-		if( result !=null ){  
+		if( result == 1 ){  
 			
 			
-		
+			session.invalidate();
+			
+			
+			
 			PrintWriter script =response.getWriter();
 			script.println("<script>");
-			script.println("alert('비밀번호 찾기 성공 .');");
-			script.println("location.href ='/Card/Member/findpw.jsp?password="+result+"'");
+			script.println("alert('탈퇴 되었습니다 .');");
+			script.println("location.href ='/Card/Main_jsp/section.jsp'");
 			script.println("</script>");
-			
-			
 		}
 		else{
 			
 			PrintWriter script =response.getWriter();
 			script.println("<script>");
-			script.println("location.href ='/Card/Member/findpw.jsp?cancel=1'");
+			script.println("location.href ='/Card/Member/delete.jsp?cancel=1'");
 			script.println("</script>");
 		}
 		
 	
 	%>
+
 </body>
 </html>

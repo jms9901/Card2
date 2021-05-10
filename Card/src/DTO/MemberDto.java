@@ -15,24 +15,23 @@ public class MemberDto {
 	String member_cardbenefit;
 	
 	
+	public MemberDto() {
+		// TODO Auto-generated constructor stub
+	}
+
 	
-	
-	
-	public MemberDto(String member_id, String member_password, String member_name, int member_resdentnum,
-			String member_sex, String member_birth, String member_phone, String member_cardtype,
-			String member_cardcompany, String member_cardbenefit) {
+	public MemberDto( String member_id, String member_password, String member_name,
+			int member_resdentnum, String member_phone ) {
 		
 		this.member_id = member_id;
 		this.member_password = member_password;
 		this.member_name = member_name;
 		this.member_resdentnum = member_resdentnum;
-		this.member_sex = member_sex;
-		this.member_birth = member_birth;
 		this.member_phone = member_phone;
-		this.member_cardtype = member_cardtype;
-		this.member_cardcompany = member_cardcompany;
-		this.member_cardbenefit = member_cardbenefit;
+		
 	}
+	
+	
 	public int getMember_point() {
 		return member_point;
 	}

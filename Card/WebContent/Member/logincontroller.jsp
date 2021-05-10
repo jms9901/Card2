@@ -17,6 +17,7 @@
 		// 첨부파일 사용시 enctype : 타입으로 변경 
 		// 2. 파일명은 DB저장
 		
+		
 		String id = request.getParameter("id");
 		String password = request.getParameter("password");
 		
@@ -35,7 +36,7 @@
 			PrintWriter script =response.getWriter();
 			script.println("<script>");
 			script.println("alert('로그인 성공 되었습니다 .');");
-			script.println("location.href ='/Card/Main_jsp/footer.jsp'");
+			script.println("location.href ='/Card/Main_jsp/section.jsp'");
 			script.println("</script>");
 		}
 		else{

@@ -6,7 +6,6 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 
 import DTO.MemberDto;
-import DTO.ProductDto;
 
 public class MemberDao {
 	
@@ -45,6 +44,22 @@ public class MemberDao {
 			pstmt.setString(7, dto.getMember_cardcompany());
 			pstmt.setString(8, dto.getMember_cardbenefit());
 			pstmt.setString(9, dto.getMember_cardtype());
+			
+			pstmt.executeUpdate();
+			
+			return 1;
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return -1;
+	}
+	
+	public int delete( MemberDto dto) {
+		String SQL = "insert into member(member_password)"+"values(?)";
+		try {
+			PreparedStatement pstmt = conn.prepareStatement(SQL);
+			
+			pstmt.setString (1, dto.getMember_password());
 			
 			pstmt.executeUpdate();
 			
@@ -121,41 +136,58 @@ public class MemberDao {
 			return null;
 		}
 			
-			public ArrayList<MemberDto> Memberlist(){
+			public MemberDto getMember( String id ){
 				
-				ArrayList<MemberDto> list = new ArrayList<MemberDto>();
+				
 				
 				try {
-					String SQL = "select * from product";
+					String SQL = "select * from Member where member_id=? ";
 					
 					PreparedStatement pstmt = conn.prepareStatement(SQL);
+					
+					pstmt.setString(1, id);
 					
 					rs = pstmt.executeQuery();
 					
 					while( rs.next()) {
+						
 						MemberDto dto = new MemberDto(
 								rs.getString(2),
 								rs.getString(3),
 								rs.getString(4),
 								rs.getInt(5),
-								rs.getString(6),
-								rs.getString(7),
-								rs.getString(8),
-								rs.getString(9),
-								rs.getString(10),
-								rs.getString(11)
+								rs.getString(8)
 								);
 						
-					dto.setMember_point(rs.getInt(1));
-					list.add(dto);
-						
+					return dto;
 					}
 					
-					return list;
+					
 				}catch (Exception e) {
 					// TODO: handle exception
-				} return list;
+				} return null;
 				
+			}
+			
+			//정보수정 
+			public int update( MemberDto dto) {
+				String SQL = "insert into member(member_password,member_name,member_phone,member_cardcompany,member_cardbenefit,member_cardtype)"+"values(?,?,?,?,?,?)";
+				try {
+					PreparedStatement pstmt = conn.prepareStatement(SQL);
+					pstmt.setString (1, dto.getMember_password());
+					pstmt.setString(2, dto.getMember_name());
+					pstmt.setString(3, dto.getMember_phone());
+					pstmt.setString(4, dto.getMember_cardcompany());
+					pstmt.setString(5, dto.getMember_cardbenefit());
+					pstmt.setString(6, dto.getMember_cardtype());
+					
+					pstmt.executeUpdate();
+					
+					return 1;
+				} catch (Exception e) {
+					// TODO: handle exception
+				}
+				return -1;
 			}
 		
 }

@@ -70,17 +70,15 @@ color: white;
 font-weight:bold;
 letter-spacing:1px;}
 
+span{ color:white;
+text-align: left;}
 
 
 
 </style>
 </head>
 <body>
-	<% MemberDao dao = MemberDao.getinstance();
-		
-	ArrayList<MemberDto> list = new ArrayList<>();
-	list = dao.Memberlist();
-	%>
+<%@include file="../Main_jsp/header.jsp" %>
 	<div class="container">
 		
 		<div class="row">
@@ -94,34 +92,44 @@ letter-spacing:1px;}
 				<form>
 				<div class="form-group">
 					-------------------------------------------------------------------
-				</div>
+				</div> <br>
+						<% request.setCharacterEncoding("UTF-8");
+				
+				MemberDao dao = MemberDao.getinstance();
+				
+				MemberDto dto = dao.getMember(user);
+				
+				%>
 				
 				<ul>
-				
-				<% for (int i=0; i<list.size(); i++) {
-					MemberDto dto = list.get(i); %>
+		
+					
 				
 				<li class="member_li">
 				
-					<a href=""><img alt="" src="/Card/images/snoopy.png" width="100px" height="100px"></a>
+					<a href=""><img alt="" src="/Card/images/snoopy.png" width="120px" height="120px"></a> <br><br>
 				
 					<div class="member_info">		
+				
 					
-					<span class="id"> [&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;아이디&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]&nbsp;&nbsp;: <%=dto.getMember_id()%></span>
+			
+					<span class="id"> [&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;아이디&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]&nbsp;&nbsp;: <%=dto.getMember_id()%></span> <br>
 			
 				
 				
-					<span class="password">[&nbsp;&nbsp;&nbsp;&nbsp;비밀번호&nbsp;&nbsp;&nbsp;&nbsp;]&nbsp;&nbsp;:<%=dto.getMember_password()%> </span>
+					<span class="password">[&nbsp;&nbsp;&nbsp;&nbsp;비밀번호&nbsp;&nbsp;&nbsp;&nbsp;]&nbsp;&nbsp;:<%=dto.getMember_password()%> </span><br>
 			
+					<span class="name"> [&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;이름&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]&nbsp;&nbsp;: <%=dto.getMember_name()%></span><br>
+			
+			
+					<span class="phone">[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;연락처&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]&nbsp;&nbsp;:<%=dto.getMember_phone() %></span><br> 
 				
-					<span class="phone">[&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;연락처&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;]&nbsp;&nbsp;:<%=dto.getMember_phone() %></span> 
 				
-				
-					<span class="resdent">[&nbsp;주민등록번호&nbsp;]&nbsp;&nbsp;:<%=dto.getMember_resdentnum() %></span>  
+					<span class="resdent">[&nbsp;주민등록번호&nbsp;]&nbsp;&nbsp;:<%=dto.getMember_resdentnum() %></span><br>  <br>
 			
 				</div>	
 				</li>
-					<% } %>
+			
 					
 				</ul>
 				
