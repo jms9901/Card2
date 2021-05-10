@@ -51,12 +51,12 @@
 	display: inline-block;
 }
 
-#nav #nav_item1, #nav_item2, #login {
+#nav #nav_item1, #nav_item2, #nav_item3, #login {
 	position: relative;
 	display: inline-block;
 }
 
-#nav #nav_item1 a, #nav_item2 a, #login a {
+#nav #nav_item1 a, #nav_item2 a, #nav_item3 a, #login a {
 	color: black;
 	text-decoration: none;
 	font-size: 15px;
@@ -70,15 +70,6 @@
 	font-size: 15px;
 	transition: 0.4s;
 }
-
-#nav #dropbtn2 {
-	color: black;
-	background-color: #F5F3F3;
-	border: none;
-	font-size: 15px;
-	transition: 0.4s;
-}
-
 
 #nav .dropdown-content {
 	display: none;
@@ -105,15 +96,7 @@
 	display: block;
 }
 
-#nav .dropdown2:hover .dropdown-content {
-	display: block;
-}
-
-#nav .dropdown3:hover .dropdown-content {
-	display: block;
-}
-
-#nav .dropdown1, .dropdown2, #nav_item1, #nav_item2  {
+#nav .dropdown1, #nav_item1, #nav_item2, #nav_item3  {
 	margin: 0 50px 0 48px;
 }
 
