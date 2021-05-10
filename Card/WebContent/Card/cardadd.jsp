@@ -67,6 +67,8 @@ function check() {
 
 <%@include file="../Main_jsp/header.jsp" %>
 
+<%@include file="admin.jsp" %>
+
 <div id="table">
 
 	<h3>카드 등록</h3>

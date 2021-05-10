@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+#div1 {
+	padding-top: 200px;
+	width: 100%;
+	margin: 0 auto;
+	text-align: center;
+}
+
+#div1 ul {
+	list-style: none;
+}
+
+#div1 ul li {
+	display: inline-block;
+	margin: 0 20px 0 20px;;
+	border: solid 1px black;
+	border-radius: 13px;
+	padding: 7px;
+	border-color: lightgray;
+}
+
+#div1 ul li:hover {
+	transform: scale(1.1)
+}
+
+#div1 ul li a{
+	text-decoration: none;
+	color: black;
+}
