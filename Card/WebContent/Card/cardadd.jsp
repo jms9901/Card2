@@ -55,6 +55,10 @@ function check() {
 		alert("카드사 링크를 입력해주세요.\n정확하게 입력 바랍니다.");
 		document.form.bank_link.focus();
 		return false;
+	}if(!form.card_category.value) {
+		alert("카드 타입을 선택해주세요.");
+		document.form.card_category.focus();
+		return false;
 	}else {
 		return true;
 	}
@@ -121,6 +125,34 @@ function check() {
 				<th>발급사링크</th>
 				<td>
 					<input type="text" name="bank_link">
+				</td>
+			</tr>
+			
+			<tr>
+				<th>카드 카테고리</th>
+				<td>
+					<input type="checkbox" name="benefit" value ="쇼핑">쇼핑
+					<input type="checkbox" name="benefit" value ="통신요금">통신요금
+					<input type="checkbox" name="benefit" value ="교통">교통<br>
+					<input type="checkbox" name="benefit" value ="주유">주유
+					<input type="checkbox" name="benefit" value ="편의점">편의점
+					<input type="checkbox" name="benefit" value ="배달">배달<br>
+					<input type="checkbox" name="benefit" value ="구독서비스">구독서비스
+					<input type="checkbox" name="benefit" value ="카페">카페
+					<input type="checkbox" name="benefit" value ="공과금">공과금<br>
+					<input type="checkbox" name="benefit" value ="마일리지">마일리지
+				</td>
+			</tr>
+			
+			<tr>
+				<th>카드 타입</th>
+				<td>
+					<select name="card_category" style="width: 150px;">
+						<option value="">선택해주세요</option>
+						<option value="국민카드">할인</option>
+						<option value="롯데카드">포인트</option>
+						<option value="신한카드">마일리지</option>
+					</select>
 				</td>
 			</tr>
 	

@@ -12,12 +12,12 @@
 <body>
 
 
-<div id="div1">
+<div id="admin_div">
 
 	<ul>
-		<li><a href="company.jsp">카드사등록</a></li>
 		<li><a href="cardadd.jsp">카드등록</a></li>
-		<li><a href="carddelete.jsp">카드삭제</a></li>
+		<li><a href="#">모든 카드목록</a></li>
+		<li><a href="#">회원목록</a></li>
 	</ul>
 
 </div>

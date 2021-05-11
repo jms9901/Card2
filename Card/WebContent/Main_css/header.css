@@ -41,58 +41,17 @@
 	display: inline-block;
 }
 
-#nav .dropdown1 {
+#nav #nav_item1, #nav_item2, #nav_item3, #nav_item4, #login {
 	position: relative;
 	display: inline-block;
+	margin-right: 80px;
 }
 
-#nav #nav_item1, #nav_item2, #nav_item3, #login {
-	position: relative;
-	display: inline-block;
-}
-
-#nav #nav_item1 a, #nav_item2 a, #nav_item3 a, #login a {
+#nav #nav_item1 a, #nav_item2 a, #nav_item3 a, #nav_item4 a {
 	color: black;
 	text-decoration: none;
 	font-size: 15px;
 	transition: 0.4s;
-}
-
-#nav #dropbtn1 {
-	color: black;
-	background-color: #F5F3F3;
-	border: none;
-	font-size: 15px;
-	transition: 0.4s;
-}
-
-#nav .dropdown-content {
-	display: none;
-	position: absolute;
-	min-width: 160px;
-	box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-	background-color: white;
-	z-index: 1;
-}
-
-#nav .dropdown-content a {
-	color: black;
-	padding: 12px 16px;
-	text-decoration: none;
-	display: block;
-	font-size: 12px;
-}
-
-#nav .dropdown-content a:hover {
-	background-color: #F7F3F3;
-}
-
-#nav .dropdown1:hover .dropdown-content {
-	display: block;
-}
-
-#nav .dropdown1, #nav_item1, #nav_item2, #nav_item3  {
-	margin: 0 50px 0 48px;
 }
 
 #nav #nav_logo {
@@ -106,3 +65,33 @@
 	border: solid 1px lightgray;
 	border-radius: 10px;
 }
+
+#nav #login {
+	margin-left: 20px;
+}
+
+#nav #signup {
+	margin-left: 30px;
+}
+
+#login #login2, #signup {
+	font-size: 13px;
+	text-decoration: none;
+	color: #B9B7B7;
+}
+
+.log_item #log_item_p1 {
+	font-size: 13px;
+	display: inline-block;
+	margin-right: 17px;
+	color: #B9B7B7;
+}
+
+.log_item .log_item_a1 {
+	font-size: 13px;
+	display: inline-block;
+	margin-right: 17px;
+	color: #B9B7B7;
+	text-decoration: none;
+}
+

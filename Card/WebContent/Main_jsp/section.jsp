@@ -21,7 +21,7 @@
 
 <% DecimalFormat df = new DecimalFormat("###,### 원"); %>
 
-<%
+<%-- <%
 
 	CardDao dao = CardDao.getinstance();
 
@@ -29,7 +29,7 @@
 	
 	list = dao.cardlist();
 
-%>
+%> --%>
 
 <div id="section">
 
@@ -76,7 +76,7 @@
 			</div>
 	</div>
 	
-	<div id="section_3">
+	<%-- <div id="section_3">
 		
 		<div id="s_item4">
 			<div id="s_item5">
@@ -113,7 +113,7 @@
 			
 		</div>
 		
-	</div>
+	</div> --%>
 	
 	<div id="div_line"></div>
 	

@@ -15,45 +15,61 @@
 </head>
 <body>
 <% 
-	
-	String user = (String)session.getAttribute("user");  %>
+	String user = (String)session.getAttribute("user");  
+%>
 	
 	<div id="nav">
 		<div id="nav_logo">
 			<a href="/Card/Main_jsp/section.jsp"><img alt="" src="/Card/images/card.png" width="65px" style="vertical-align:middle; margin-right:50px;"></a>
 		</div>
 	
-		<div class="dropdown1">
-			<button id="dropbtn1">신용카드▽</button>
-				<div class="dropdown-content">
-					<a href="#">할인</a>
-					<a href="#">포인트</a>
-					<a href="#">마일리지</a>
-				</div>
-		</div>
-		
-		
 		<div id="nav_item1">
-			<a href="/Card/Card/cardcompany.jsp" id="nav_item1_a">카드사</a>
+			<a href="#" id="nav_item1_a">카드순위</a>
 		</div>
 		
 		<div id="nav_item2">
-			<a href="#" id="nav_item2_a">문의사항</a>
+			<a href="#" id="nav_item2_a">카드비교/검색</a>
 		</div>
+		
 		
 		<div id="nav_item3">
-			<a href="#" id="nav_item3_a">고객센터</a>
+			<a href="/Card/Card/cardcompany.jsp" id="nav_item3_a">카드사</a>
 		</div>
 		
-		<div id="login" style="margin-left: 68px;">
+		<div id="nav_item4">
+			<a href="#" id="nav_item4_a">고객센터</a>
+		</div>
+		
+		<div id="login">
 		
 		<%if (user == null) { %>
-					<a href="/Card/Member/login.jsp">로그인</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<a href="/Card/Member/signup.jsp">회원가입</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<%} else { %>
-						<li style="padding-top: 10px;"> <%= user %>님 </li>
-						<a href="/Card/Member/logout.jsp"> 로그아웃 </a>
-						<a href="/Card/Member/info.jsp">회원정보</a> 
+					<a href="/Card/Member/login.jsp" id="login2">로그인</a>
+					<a href="/Card/Member/signup.jsp" id="signup">회원가입</a>
+					<%} else {
+						
+							if( user.equals("admin") ){
+								
+								%>
+							<div class="log_item">
+								<p id="log_item_p1">관리자 님</p>
+								<a href="/Card/Member/logout.jsp" class="log_item_a1"> 로그아웃 </a>
+								<a href="/Card/Card/cardadd.jsp" class="log_item_a1">관리자</a>
+							</div>
+							<%
+								
+							} else {
+								%>
+							<div class="log_item">
+								<p id="log_item_p1"><%= user %> 님</p>
+								<a href="/Card/Member/logout.jsp" class="log_item_a1"> 로그아웃 </a>
+								<a href="/Card/Member/info.jsp" class="log_item_a1">회원정보</a> 
+							</div>
+							<%
+							}
+						
+						%>
+						
+	
 						<%}%>
 
 		</div>
@@ -66,16 +82,16 @@ window.onscroll = function() {scrollFunction()};
 function scrollFunction() {
 	if (document.body.scrollTop > 60 || document.documentElement.scrollTop > 60) {
 	    //document.getElementById("nav").style.padding = "10px 5px 15px 5px";
-	    document.getElementById("dropbtn1").style.fontSize = "12px";
 	    document.getElementById("nav_item1_a").style.fontSize = "12px";
 	    document.getElementById("nav_item2_a").style.fontSize = "12px";
 	    document.getElementById("nav_item3_a").style.fontSize = "12px";
+	    document.getElementById("nav_item4_a").style.fontSize = "12px";
 	  } else {
 	    document.getElementById("nav").style.padding = "10px 5px 20px 5px";
-	    document.getElementById("dropbtn1").style.fontSize = "15px";
 	    document.getElementById("nav_item1_a").style.fontSize = "15px";
 	    document.getElementById("nav_item2_a").style.fontSize = "15px";
 	    document.getElementById("nav_item3_a").style.fontSize = "15px";
+	    document.getElementById("nav_item4_a").style.fontSize = "15px";
 	  }
 }
 

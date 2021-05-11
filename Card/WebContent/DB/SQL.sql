@@ -1,20 +1,16 @@
 create database Portfolio;
 
-create table Card_company(
-	card_company varchar(100) not null primary key,  
-	card_name varchar(100) not null,                
-	card_category varchar(100) not null,             
-);
-
-
 create table Card(
-	card_number int auto_increment primary key,
+	card_number int auto_increment,
 	card_name varchar(100) not null,             
 	card_company varchar(100) not null,          
 	recommendation int,                         
 	membership_fee int not null,                 
 	images varchar(100),                         
-	bank_link varchar(1000) not null,           
+	bank_link varchar(1000) not null,
+	card_category varchar(100) not null,
+	card_benefit varchar(20) not null,
+    primary key (card_number, card_name)
 );
 
 

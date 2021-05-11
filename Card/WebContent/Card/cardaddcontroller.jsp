@@ -30,7 +30,23 @@
 		String images = multi.getFilesystemName("images");
 		String bank_link = multi.getParameter("bank_link");
 		
-		CardDto cardDto = new CardDto(card_name, card_company, membership_fee, images, bank_link);
+		String benefit = "";
+		
+		String benefit2[] = multi.getParameterValues("benefit");
+			for(int i = 0; i < benefit2.length; i++) {
+				
+				String str = benefit2[i];
+				
+				if(i == benefit2.length - 1) {
+					benefit = benefit + str;
+					break;
+				}
+				benefit = benefit + str + ",";
+			}
+			
+		String card_category = multi.getParameter("card_category");
+		
+		CardDto cardDto = new CardDto(card_name, card_company, membership_fee, images, bank_link, benefit, card_category);
 		
 		CardDao dao = CardDao.getinstance();
 
