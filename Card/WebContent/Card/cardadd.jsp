@@ -55,11 +55,31 @@ function check() {
 		alert("카드사 링크를 입력해주세요.\n정확하게 입력 바랍니다.");
 		document.form.bank_link.focus();
 		return false;
-	}if(!form.card_category.value) {
+	}
+	
+	var benefit = document.getElementsByName("benefit");
+	
+	if(form.benefit[0].checked == false &&
+		form.benefit[1].checked == false &&
+		form.benefit[2].checked == false &&
+		form.benefit[3].checked == false &&
+		form.benefit[4].checked == false &&
+		form.benefit[5].checked == false &&
+		form.benefit[6].checked == false &&
+		form.benefit[7].checked == false &&
+		form.benefit[8].checked == false &&
+		form.benefit[9].checked == false) {
+		
+		alert("카테고리를 하나 이상 선택해주세요.");
+		return false;
+		
+	}
+	if(!form.card_category.value) {
 		alert("카드 타입을 선택해주세요.");
 		document.form.card_category.focus();
 		return false;
-	}else {
+	}
+	else {
 		return true;
 	}
 	
