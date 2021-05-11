@@ -16,8 +16,8 @@
 
 	<ul>
 		<li><a href="cardadd.jsp">카드등록</a></li>
-		<li><a href="#">모든 카드목록</a></li>
-		<li><a href="#">회원목록</a></li>
+		<li><a href="allcard.jsp">모든 카드목록</a></li>
+		<li><a href="allmember.jsp">회원목록</a></li>
 	</ul>
 
 </div>

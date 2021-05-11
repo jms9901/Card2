@@ -75,7 +75,7 @@ function check() {
 
 <div id="table">
 
-	<h3>카드 등록</h3>
+	<h3><span>Peanuts</span> 카드등록</h3>
 	
 	<form name="form" method="post" enctype="multipart/form-data" action="cardaddcontroller.jsp">
 	
@@ -149,9 +149,9 @@ function check() {
 				<td>
 					<select name="card_category" style="width: 150px;">
 						<option value="">선택해주세요</option>
-						<option value="국민카드">할인</option>
-						<option value="롯데카드">포인트</option>
-						<option value="신한카드">마일리지</option>
+						<option value="할인">할인</option>
+						<option value="포인트">포인트</option>
+						<option value="마일리지">마일리지</option>
 					</select>
 				</td>
 			</tr>

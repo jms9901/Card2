@@ -16,7 +16,7 @@ public class MemberDao {
 		
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			conn = DriverManager.getConnection("jdbc:mysql://localhost:3307/card?serverTimezone=UTC", "root" , "1234" );
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/card?serverTimezone=UTC", "root" , "dnd941012" );
 		}
 		catch (Exception e) {
 			// TODO: handle exception
@@ -32,7 +32,7 @@ public class MemberDao {
 	}
 	
 	public int signup( MemberDto dto) {
-		String SQL = "insert into member(member_id,member_password,member_name,member_resdentnum,member_sex,member_phone,member_cardcompany,member_cardbenefit,member_cardtype)"+"values(?,?,?,?,?,?,?,?,?)";
+		String SQL = "insert into member(member_id, member_password, member_name, member_resdentnum, member_sex, member_phone, member_cardcompany, member_cardbenefit, member_cardtype)" + "values(?,?,?,?,?,?,?,?,?)";
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(SQL);
 			pstmt.setString (1, dto.getMember_id());

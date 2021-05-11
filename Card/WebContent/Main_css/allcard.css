@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+#a_div1 {
+	padding-top: 40px;
+	width: 100%;
+	margin: 0 auto;
+}
+
+#a_div1 #a_t1 {
+	margin: 0 auto;
+	border-collapse: collapse;
+	text-align: center;
+}
+
+#a_div1 #a_t1 th {
+	padding: 20px 50px 10px 50px;
+	border-bottom: solid 1px black;
+}
+
+#a_div1 #a_t1 td {
+	padding: 10px;
+}
+
+#a_div1 h3 {
+	text-align: center;
+	margin-bottom: 50px;
+}
+
+#a_div1 h3 span {
+	color: #6276FA;
+}
