@@ -1,3 +1,6 @@
+<%@page import="DTO.MemberDto"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="DAO.MemberDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -13,6 +16,16 @@
 <%@include file="../Main_jsp/header.jsp" %>
 
 <%@include file="admin.jsp" %>
+
+<%
+
+	MemberDao dao = MemberDao.getinstance();
+
+	ArrayList<MemberDto> list = new ArrayList<>();
+	
+	list = dao.memberlist();
+
+%>
 
 <div id="m_div1">
 
@@ -30,15 +43,31 @@
 				<th>타입</th>
 			</tr>
 			
+			<%
+			
+				for(int i = 0; i < list.size(); i++) {
+					
+					MemberDto dto = list.get(i);
+					
+			%>
+			
 			<tr>
-				<td>1</td>
-				<td>2</td>
-				<td>3</td>
-				<td>4</td> <%// 반복문 %>
-				<td>5</td>
-				<td>6</td>
-				<td>7</td>
+				<td><%=dto.getMember_id() %></td>
+				<td><%=dto.getMember_name() %></td>
+				<td><%=dto.getMember_sex() %></td>
+				<td><%=dto.getMember_phone() %></td>
+				<td><%=dto.getMember_cardcompany() %></td>
+				<td>
+					<%=dto.getMember_cardbenefit() %>
+				</td>
+				<td>
+					<%=dto.getMember_cardtype() %>
+				</td>
 			</tr>
+			
+			<%	
+			}
+			%>
 		
 	</table>
 

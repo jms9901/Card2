@@ -31,6 +31,20 @@ public class MemberDto {
 		
 	}
 	
+	// 관리자 페이지 모든 회원 조회
+	public MemberDto(String member_id, String member_name, String member_sex, String member_phone,
+			String member_cardcompany, String member_cardbenefit, String member_cardtype) {
+		
+		this.member_id = member_id;
+		this.member_name = member_name;
+		this.member_sex = member_sex;
+		this.member_phone = member_phone;
+		this.member_cardcompany = member_cardcompany;
+		this.member_cardbenefit = member_cardbenefit;
+		this.member_cardtype = member_cardtype;
+		
+	}
+	
 	
 	public int getMember_point() {
 		return member_point;

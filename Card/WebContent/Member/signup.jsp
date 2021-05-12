@@ -167,32 +167,32 @@
 										
 										<tr style="text-align: left;">
 										<td rowspan="4"><label class="form-control-label" > [카드 혜택] </label></td>
-											<td style="padding-top: 30px;"><input type="checkbox" name="interset1" value="쇼핑" > 쇼핑
-											<input type="checkbox" name="interset2" value="통신요금"> 통신요금
-											<input type="checkbox" name="interset3" value="교통"> 교통</td>
+											<td style="padding-top: 30px;"><input type="checkbox" name="interset" value="쇼핑" > 쇼핑
+											<input type="checkbox" name="interset" value="통신요금"> 통신요금
+											<input type="checkbox" name="interset" value="교통"> 교통</td>
 										</tr>
 										<tr style="text-align: left;" >
-											<td><input type="checkbox" name="interset4" value="주유"> 주유
-											<input type="checkbox" name="interset5" value="편의점"> 편의점
-											<input type="checkbox" name="interset6" value="배달"> 배달</td>
+											<td><input type="checkbox" name="interset" value="주유"> 주유
+											<input type="checkbox" name="interset" value="편의점"> 편의점
+											<input type="checkbox" name="interset" value="배달"> 배달</td>
 										
 										<tr style="text-align: left;">
-											<td><input type="checkbox" name="interset7" value="구독"> 구독서비스
-											<input type="checkbox" name="interset8" value="카페"> 카페
-											<input type="checkbox" name="interset9" value="공과금"> 공과금</td>
+											<td><input type="checkbox" name="interset" value="구독"> 구독서비스
+											<input type="checkbox" name="interset" value="카페"> 카페
+											<input type="checkbox" name="interset" value="공과금"> 공과금</td>
 											
 										</tr>
 										<tr style="text-align: left; ">
-											<td style="padding-bottom: 30px;"><input type="checkbox" name="interset10" value="마일리지"> 마일리지</td>
+											<td style="padding-bottom: 30px;"><input type="checkbox" name="interset" value="마일리지"> 마일리지</td>
 										</tr>
 									
 				
 										<tr style="text-align: left;">
 											<td ><label class="form-control-label" > [카드 타입]</label></td>
 											<td >
-											<input type="checkbox" name="type1" value="할인"> 할인
-											<input type="checkbox" name="type2" value="포인트"> 포인트
-											<input type="checkbox" name="type3" value="마일리지"> 마일리지 </td>
+											<input type="radio" name="type" value="할인"> 할인
+											<input type="radio" name="type" value="포인트"> 포인트
+											<input type="radio" name="type" value="마일리지"> 마일리지 </td>
 										</tr>
 									</table>		
 	
