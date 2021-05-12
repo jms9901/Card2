@@ -21,7 +21,7 @@ public class CardDao {
 
 			Class.forName("com.mysql.cj.jdbc.Driver"); // mysql �뱶�씪�씠踰� �뿰寃�
 
-			conn = DriverManager.getConnection("jdbc:mysql://localhost:3307/card?serverTime=UTC", "root", "1234");
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/card?serverTime=UTC", "root", "dnd941012");
 
 		} catch (Exception e) {
 			e.getMessage();
