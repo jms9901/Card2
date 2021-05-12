@@ -1,3 +1,4 @@
+<%@page import="java.util.Arrays"%>
 <%@page import="DTO.CardDto"%>
 <%@page import="DAO.CardDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -46,11 +47,6 @@ function check() {
 		alert("연회비는 양수로만 입력가능합니다.");
 		document.form.membership_fee.value = "";
 		document.form.membership_fee.focus();
-		return false;
-	}
-	if(!form.images.value) {
-		alert("카드 이미지는 필수입니다.");
-		document.form.images.focus();
 		return false;
 	}
 	if(!form.bank_link.value) {
@@ -110,13 +106,14 @@ function check() {
 
 	<h3><span>Peanuts</span> 카드등록</h3>
 	
-	<form name="form" method="post" enctype="multipart/form-data" action="cardaddcontroller.jsp">
+	<form name="form" method="post" enctype="multipart/form-data" action="modifycontroller.jsp">
 	
 		<table id="table_1">
 			<tr>
 				<th>카드이름</th>
 				<td>
 					<input type="text" name="card_name" size="30" value="<%=dto.getCard_name() %>">
+					<input type="hidden" name="card_name2" size="30" value="<%=dto.getCard_name() %>">
 				</td>
 			</tr>
 			
@@ -173,18 +170,16 @@ function check() {
 				%>
 				<th>카드 카테고리</th>
 				<td>
-				
-					<input type="checkbox" name="benefit" value ="쇼핑" <%if(category.toString("쇼핑")){%>checked<%} %>>쇼핑
-					<input type="checkbox" name="benefit" value ="통신요금">통신요금
-					<input type="checkbox" name="benefit" value ="교통">교통<br>
-					<input type="checkbox" name="benefit" value ="주유">주유
-					<input type="checkbox" name="benefit" value ="편의점">편의점
-					<input type="checkbox" name="benefit" value ="배달">배달<br>
-					<input type="checkbox" name="benefit" value ="구독서비스">구독서비스
-					<input type="checkbox" name="benefit" value ="카페">카페
-					<input type="checkbox" name="benefit" value ="공과금">공과금<br>
-					<input type="checkbox" name="benefit" value ="마일리지">마일리지
-					
+					<input type="checkbox" name="benefit" value ="쇼핑" <%if(Arrays.asList(category).contains("쇼핑")){%>checked<%} %>>쇼핑
+					<input type="checkbox" name="benefit" value ="통신요금" <%if(Arrays.asList(category).contains("통신요금")){%>checked<%} %>>통신요금
+					<input type="checkbox" name="benefit" value ="교통" <%if(Arrays.asList(category).contains("교통")){%>checked<%} %>>교통<br>
+					<input type="checkbox" name="benefit" value ="주유" <%if(Arrays.asList(category).contains("주유")){%>checked<%} %>>주유
+					<input type="checkbox" name="benefit" value ="편의점" <%if(Arrays.asList(category).contains("편의점")){%>checked<%} %>>편의점
+					<input type="checkbox" name="benefit" value ="배달" <%if(Arrays.asList(category).contains("배달")){%>checked<%} %>>배달<br>
+					<input type="checkbox" name="benefit" value ="구독서비스" <%if(Arrays.asList(category).contains("구독서비스")){%>checked<%} %>>구독서비스
+					<input type="checkbox" name="benefit" value ="카페" <%if(Arrays.asList(category).contains("카페")){%>checked<%} %>>카페
+					<input type="checkbox" name="benefit" value ="공과금" <%if(Arrays.asList(category).contains("공과금")){%>checked<%} %>>공과금<br>
+					<input type="checkbox" name="benefit" value ="마일리지" <%if(Arrays.asList(category).contains("마일리지")){%>checked<%} %>>마일리지
 				</td>
 			</tr>
 			

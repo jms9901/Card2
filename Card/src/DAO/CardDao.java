@@ -140,6 +140,57 @@ public class CardDao {
 		return null;
 	}
 	
+	// 카드 수정 메소드
+	public int cardmodify(CardDto dto , String card_name2) {
+		
+		String sql = "update card set card_name=?, card_company=?, membership_fee=?, images=?, bank_link=?,  card_category=?, card_benefit=? where card_name=?";
+		
+		try {
+			
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, dto.getCard_name());
+			pstmt.setString(2, dto.getCard_company());
+			pstmt.setInt(3, dto.getMembership_fee());
+			pstmt.setString(4, dto.getImages());
+			pstmt.setString(5, dto.getBank_link());
+			pstmt.setString(6, dto.getCard_category());
+			pstmt.setString(7, dto.getCard_benefit());
+			pstmt.setString(8, card_name2);
+			
+			pstmt.executeUpdate();
+			
+			return 1;
+			
+		}catch (Exception e) {
+			e.getMessage();
+			e.getStackTrace();
+		}
+		return -1;
+	}
+	
+	// 카드 삭제 메소드
+	public int deletecard(String card_name) {
+		
+		String sql = "delete from card where card_name=?";
+		
+		try {
+			
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, card_name);
+			
+			pstmt.executeUpdate();
+			
+			return 1;
+			
+		}catch (Exception e) {
+			e.getMessage();
+			e.getStackTrace();
+		}
+		return -1;
+	}
+	
 
 	public ArrayList<CardDto> cardcompanylist(String company) {
 

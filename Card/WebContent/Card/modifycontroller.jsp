@@ -25,11 +25,20 @@
 													// DefaultFileRenamePolicy() : 업로드시 중복된 파일명 제거
 													
 		request.setCharacterEncoding("UTF-8");
-		
+													
 		String card_name = multi.getParameter("card_name");
+		String card_name2 = multi.getParameter("card_name2");
+		
 		String card_company = multi.getParameter("card_company");
+		
 		int membership_fee = Integer.parseInt(multi.getParameter("membership_fee"));
+		
 		String images = multi.getFilesystemName("images");
+		
+		if(images == null) {
+			images = multi.getParameter("images2");
+		}
+		
 		String bank_link = multi.getParameter("bank_link");
 		
 		String benefit = "";
@@ -51,16 +60,15 @@
 		CardDto cardDto = new CardDto(card_name, card_company, membership_fee, images, bank_link, benefit, card_category);
 		
 		CardDao dao = CardDao.getinstance();
-
-	
-		int result = dao.cardadd(cardDto);
+		
+		int result = dao.cardmodify(cardDto , card_name2);
 		
 		if(result == 1) {
 			
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
 			
-				script.println("alert('카드 등록 완료');");
+				script.println("alert('카드 수정 완료');");
 				script.println("location.href='/Card/Card/allcard.jsp'");
 			
 			script.println("</script>");
@@ -70,7 +78,7 @@
 			PrintWriter script = response.getWriter();
 			script.println("<script>");
 			
-				script.println("alert('카드 등록 실패');");
+				script.println("alert('카드 수정 실패 [ 개발자에게 문의해주세요. ]');");
 				 script.println("history.back()"); 
 			
 			script.println("</script>");
