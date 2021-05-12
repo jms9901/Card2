@@ -209,7 +209,7 @@ public class CardDao {
 			while (rs.next()) {
 
 				CardDto dto = new CardDto(rs.getString(2), rs.getString(3), rs.getInt(5), rs.getString(6),
-						rs.getString(7));
+						rs.getString(7), rs.getString(8), rs.getString(9));
 
 				list.add(dto);
 			}
