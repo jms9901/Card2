@@ -42,8 +42,8 @@ public class CardDao {
 	// 카드 추가
 	public int cardadd(CardDto dto) {
 
-		String sql = "insert into card(card_name, card_company, membership_fee, images, bank_link, card_category, card_benefit)"
-				+ "values(?,?,?,?,?,?,?)";
+		String sql = "insert into card(card_name, card_company, membership_fee, images, bank_link, card_category, card_benefit, recommendation)"
+				+ "values(?,?,?,?,?,?,?,?)";
 
 		try {
 
@@ -56,6 +56,8 @@ public class CardDao {
 			pstmt.setString(5, dto.getBank_link());
 			pstmt.setString(6, dto.getCard_category());
 			pstmt.setString(7, dto.getCard_benefit());
+			
+			pstmt.setInt(8, 0);
 
 			pstmt.executeUpdate();
 
@@ -220,6 +222,25 @@ public class CardDao {
 			e.getStackTrace();
 		}
 		return list;
+	}
+	
+	// 카드 클릭시 추천 +1
+	public void click(String link) {
+		
+		String sql = "update card set recommendation = recommendation + 1 where bank_link = ?";
+		
+		try {
+			
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, link);
+			
+			pstmt.executeUpdate();
+			
+		}catch (Exception e) {
+			// TODO: handle exception
+		}
+		
 	}
 
 }

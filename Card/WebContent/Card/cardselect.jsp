@@ -60,7 +60,7 @@
 					<img alt="" src="/Card/card_upload/<%=dto.getImages() %>" width="200px">
 					
 					<div id="div5">
-						<a href="<%=dto.getBank_link() %>">카드사 이동</a>
+						<a href="clickcontroller.jsp?link=<%=dto.getBank_link() %>" target="blank">카드사 이동</a>
 					</div>
 				</div>
 				

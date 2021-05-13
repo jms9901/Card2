@@ -24,7 +24,7 @@
 		</div>
 	
 		<div id="nav_item1">
-			<a href="#" id="nav_item1_a">카드순위</a>
+			<a href="/Card/Card/cardranking.jsp" id="nav_item1_a">카드순위</a>
 		</div>
 		
 		<div id="nav_item2">
