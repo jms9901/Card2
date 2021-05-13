@@ -242,5 +242,42 @@ public class CardDao {
 		}
 		
 	}
+	
+	// 카드 조회 추천수 높은거부터
+	public ArrayList<CardDto> cardranking() {
+
+		String sql = "select * from card order by recommendation desc";
+
+		ArrayList<CardDto> list = new ArrayList<CardDto>();
+
+		try {
+
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+
+			rs = pstmt.executeQuery();
+
+			while (rs.next()) {
+
+				CardDto dto = new CardDto(
+						rs.getString(2),
+						rs.getString(3),
+						rs.getInt(5),
+						rs.getString(6),
+						rs.getString(7),
+						rs.getString(8),
+						rs.getString(9));
+
+				list.add(dto);
+
+			}
+
+			return list;
+
+		} catch (Exception e) {
+			e.getMessage();
+			e.getStackTrace();
+		}
+		return list;
+	}
 
 }
