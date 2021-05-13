@@ -48,38 +48,39 @@
 			
 			CardDto dto = list.get(i);
 			
+			String[] category = dto.getCard_category().split(",");
+			
 	%>
 	
 	<div id="div3">
 	
-		<div id="div4">
-			<img alt="" src="/Card/card_upload/<%=dto.getImages() %>" width="140px">
-		</div>
-		
-		<div id="div5">
-			<p><%=dto.getCard_name() %></p>
-		</div>
-		
-		<div id="div6">
-			<p><%=dto.getCard_company() %></p>
-		</div>
-		
-		<div id="div7">
-			<p>연회비 : <%=dto.getMembership_fee() %></p>
-		</div>
-		
-		<div id="div8">
-			<p>주 카테고리 : <%=dto.getCard_category() %></p>
-		</div>
-		
-		<div id="div9">
-			<p>카드혜택 : <%=dto.getCard_benefit() %></p>
-		</div>
-		
-		<div id="div10">
-			<a href="<%=dto.getBank_link() %>">카드사 이동</a>
-		</div>
-		
+		<ul>
+			<li>
+				<div id="div4">
+					<img alt="" src="/Card/card_upload/<%=dto.getImages() %>" width="200px">
+					
+					<div id="div5">
+						<a href="<%=dto.getBank_link() %>">카드사 이동</a>
+					</div>
+				</div>
+				
+				<div id="div6">
+					<p id="p1"><%=dto.getCard_name() %></p>
+					<p id="p2"><%=dto.getCard_company() %><span><%=dto.getCard_benefit() %></span></p>
+					<p id="p3">연회비 : <%=df.format(dto.getMembership_fee()) %></p>
+					<div id="p4">
+						<%
+							for(int j = 0; j < category.length; j++) {
+								%>
+									<p id="p5"><%=category[j] %></p>
+								<%
+							}
+						%>
+					</div>
+				</div>
+			</li>
+		</ul>
+	
 	</div>
 	<%		
 	}
