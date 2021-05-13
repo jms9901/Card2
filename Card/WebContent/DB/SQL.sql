@@ -34,16 +34,21 @@ create table card.member(
 	member_phone varchar(100) not null
     member_cardcompany varchar(600) not null,
 	member_cardbenefit varchar(600) not null,
-	member_cardtype varchar (600) not null
+	member_cardtype varchar (600) not nulls
 
 
 
 );
 
-create table card.interest(
 
-	interest_num int primary key AUTO_INCREMENT,
-	member_name varchar(50) not null , 
-	card_card varchar(50) not null 
+create table card.board(
 
-)
+	board_id int primary key  auto_increment ,
+	board_title varchar(40) not null,
+	board_cardname varchar(300) not null,
+	board_userid varchar(100) not null,
+	board_date varchar(40) not null,
+	board_file varchar(100) ,
+	board_count int 
+);
+
