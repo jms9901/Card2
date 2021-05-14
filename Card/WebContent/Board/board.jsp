@@ -1,6 +1,8 @@
+
 <%@page import="DTO.BoardDto"%>
-<%@page import="java.util.ArrayList"%>
 <%@page import="DAO.BoardDao"%>
+<%@page import="java.util.ArrayList"%>
+
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -64,7 +66,6 @@ form { margin-top : 50px;}
 				%>
 					<tr onclick="location.href='boarddetail.jsp?id='+<%=dto.getBoard_id()%> ">
 					<td> <%=dto.getBoard_id() %> </td>
-					<td> <%=dto.getBoard_contents() %></td>
 					<td> <%=dto.getBoard_title() %> </td>
 					<td> <%=dto.getBoard_userid() %> </td>
 					<td> <%=dto.getBoard_date() %> </td> </tr>

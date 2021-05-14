@@ -16,7 +16,7 @@ public class BoardDao {
 		
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/web?serverTimezone=UTC", "root" , "7624" );
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/card?serverTimezone=UTC", "root" , "7624" );
 		}
 		catch (Exception e) {
 			// TODO: handle exception
@@ -48,18 +48,21 @@ public class BoardDao {
 	}
 	
 	public int getnext() {
-		String SQL = "SELECT MAX(board_id) form Board";
+		String SQL = "SELECT MAX(board_id) from Board"; // DB함수 = MAX(필드명) : 해당 필드의 최대값
 		
 		try {
 			PreparedStatement pstmt = conn.prepareStatement(SQL);
 			rs = pstmt.executeQuery();
-			if(rs.next()) {return rs.getInt(1) + 1; } 
-			return 1;
-		} catch (Exception e) {
+			if( rs.next() ) {
+				return rs.getInt(1) +1;		// 마지막 게시물 번호 + 1 
+			}
+			return 1; // 첫 게시물
+		}
+		catch (Exception e) {
 			// TODO: handle exception
-		} return -1;
+		}
+		return -1; // db 오류 
 	}
-	
 	public int write ( BoardDto dto) {
 		String SQL =" insert into Board values(?,?,?,?,?,?,?)";
 		try {
@@ -82,6 +85,7 @@ public class BoardDao {
 	
 	// 게시물 모든 조회 메소드 
 	public ArrayList<BoardDto> getboardlist(int pagenumber) {
+		
 		ArrayList<BoardDto> list = new ArrayList<BoardDto>();
 		
 		try {
@@ -126,12 +130,12 @@ public class BoardDao {
 		
 	}
 	
-	public BoardDto getboard(int id) {
+	public BoardDto getboard(int board_id) {
 		
 		try {
 			String SQL = "select * from board where board_id = ?";
 			PreparedStatement pstmt = conn.prepareStatement(SQL);
-			pstmt.setInt(1, id);
+			pstmt.setInt(1, board_id);
 			rs = pstmt.executeQuery();
 			
 			BoardDto dto = new BoardDto();
@@ -150,7 +154,7 @@ public class BoardDao {
 				SQL = "update board set board_count = ? where board_id = ? ";
 				pstmt = conn.prepareStatement(SQL);
 				pstmt.setInt(1, count);
-				pstmt.setInt(2, id);
+				pstmt.setInt(2, board_id);
 				
 				pstmt.executeUpdate();
 				

@@ -1,6 +1,6 @@
-<%@page import="java.io.PrintWriter"%>
 <%@page import="DAO.BoardDao"%>
 <%@page import="DTO.BoardDto"%>
+<%@page import="java.io.PrintWriter"%>
 <%@page import="com.oreilly.servlet.multipart.DefaultFileRenamePolicy"%>
 <%@page import="com.oreilly.servlet.MultipartRequest"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -17,7 +17,7 @@
 <%
 		//cos파일 다운 받기 
 
-		String realFolder = "C:/Users/user/git/Card2/Card/WebContent/upload";
+		String realFolder = "C:/Users/user/git/Card/Card/WebContent/upload";
 		
 		MultipartRequest multi = new MultipartRequest( request, realFolder, 1024*1024*10 , "UTF-8", new DefaultFileRenamePolicy() );
 														// 요청방식, 저장위치,  파일최대용량,			인코딩	,	보안		

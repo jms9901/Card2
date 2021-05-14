@@ -16,17 +16,17 @@ public class MemberDao {
 		
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
-			conn = DriverManager.getConnection("jdbc:mysql://localhost:3307/card?serverTimezone=UTC", "root" , "1234" );
+			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/card?serverTimezone=UTC", "root" , "7624" );
 		}
 		catch (Exception e) {
 			// TODO: handle exception
 		}
 	}
 	
-	//  dao ��ü ���� 
+	//  dao 占쏙옙체 占쏙옙占쏙옙 
 	private static MemberDao instance = new MemberDao();
 	
-	// dao ��ü ��ȯ �޼ҵ� 
+	// dao 占쏙옙체 占쏙옙환 占쌨소듸옙 
 	public static MemberDao getinstance() {
 		return instance;
 	}
@@ -57,7 +57,7 @@ public class MemberDao {
 		return -1;
 	}
 
-	// �α��� �޼ҵ�
+	// 占싸깍옙占쏙옙 占쌨소듸옙
 	public int login(String id, String password) {
 
 		String SQL = "select * from member where member_id=? and member_password=?";
@@ -167,7 +167,7 @@ public class MemberDao {
 		return -1;
 	}
 
-	// ��������
+	// 占쏙옙占쏙옙占쏙옙占쏙옙
 	public int update(MemberDto dto, String id) {
 		String SQL = "update member set member_password=? , member_name = ? ,member_phone=? , member_cardcompany=?,member_cardbenefit=?,member_cardtype=? where member_id =?";
 		
@@ -190,7 +190,7 @@ public class MemberDao {
 		return -1;
 	}
 	
-	// 모든 회원 조회
+	// 紐⑤뱺 �쉶�썝 議고쉶
 	public ArrayList<MemberDto> memberlist() {
 		
 		String sql = "select * from member";
