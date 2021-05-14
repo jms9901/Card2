@@ -28,7 +28,7 @@
 		</div>
 		
 		<div id="nav_item2">
-			<a href="#" id="nav_item2_a">카드비교/검색</a>
+			<a href="/Card/Card/cardsearch.jsp" id="nav_item2_a">카드비교/검색</a>
 		</div>
 		
 		
