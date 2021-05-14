@@ -1,3 +1,6 @@
+<%@page import="java.util.ArrayList"%>
+<%@page import="DAO.ReplyDao"%>
+<%@page import="DTO.ReplyDto"%>
 <%@page import="DTO.BoardDto"%>
 <%@page import="DAO.BoardDao"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -97,14 +100,15 @@ form { margin-top : 50px;}
 	<br>
 	<br>
 	<!--  ////////////////////////////////////////댓글 작성 코드 //////////////////////////////////////////////// -->
-	
+ 
 	<div class="container">
 		<div>
-			<form action="replycontroller.jsp?id <%=board_id%>" method="post" >
-			
+			<form action="replycontroller.jsp?board_id <%=board_id%>" method="post" >
+				<input type="hidden" name="board_id" value=<%=board_id%>>
 				<table class="table table-striped" style="text-align: center; border: 1px">
 					<thead>
 						<tr>
+						
 							<th style="background-color: #eeeeee; text-align: center;">댓글</th>
 						</tr>	
 					</thead>
@@ -128,18 +132,17 @@ form { margin-top : 50px;}
 	</div>
 	
 	
+
 	
 	
-	
-	
-<%-- 	
+ 	
 	<!--  ////////////////////////////////////////댓글 작성 목록 /////////////////////////////////////////////// -->
 		<br><br><br>
 		
 		<%
 			ReplyDao replyDao = ReplyDao.getinstance();
 		
-			ArrayList<ReplyDto> list = replyDao.getreplylist(id);
+			ArrayList<ReplyDto> list = replyDao.getreplylist(board_id);
 		
 		
 		%>
@@ -168,8 +171,7 @@ form { margin-top : 50px;}
 				<%} %>
 				</table>	
 		</div> 
-	</div>--%>
-	
+	</div>
 	
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 		<script src="/Card/js/bootstrap.js"></script>

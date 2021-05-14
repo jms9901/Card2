@@ -37,7 +37,7 @@
 		</div>
 		
 		<div id="nav_item4">
-			<a href="#" id="nav_item4_a">고객센터</a>
+			<a href="/Card/Board/board.jsp" id="nav_item4_a">고객센터</a>
 		</div>
 		
 		<div id="login">
